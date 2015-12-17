@@ -1,7 +1,7 @@
 ﻿package src.main.java;
 
 public class Question2 {
-
+   
 	/*
 	 * 処理の開始
 	 */

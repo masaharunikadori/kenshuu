@@ -22,6 +22,7 @@ public class IamGamePlayer {
 			e1.printStackTrace();
 		}
 
+		//Gamecubeを選択した場合
 		if (str.equals("1")) {
 			//ゲーム機のインスタンスの生成
 			Hardware hd = new Hardware();
@@ -63,7 +64,7 @@ public class IamGamePlayer {
 						break;
 					//１～５以外の値が入力された時
 					default:
-						System.out.println("1~4の数値を入力してください。");
+						System.out.println("1～4の数値を入力してください。");
 					}
 				} catch (Exception e) {
 					System.out.println(e); //エラーの出力
@@ -72,6 +73,7 @@ public class IamGamePlayer {
 			}
 		}
 
+		//PS4を選択した場合
 		else if (str.equals("2")) {
 			//ゲーム機のインスタンスの生成
 			PS4 hd = new PS4();
@@ -80,7 +82,7 @@ public class IamGamePlayer {
 			hd.getInfo();
 			while (flag) {
 				System.out
-						.println("操作を半角英数字1～9で入力してください。\n１．電源を入れる。２．電源を落とす。３．ソフトを入れる。４．ソフトを取り出す。５．指定のソフトを取り出す \n6.インストールされているソフトの表示 7.ゲームソフトを選ぶ 8.アクティブなゲームの表示 9.ゲームをプレイする");
+						.println("操作を半角英数字1～9で入力してください。\n１．電源を入れる。２．電源を落とす。３．ソフトを入れる。４．一番古いソフトを削除する。５．指定のソフトを削除する。 \n6.インストールされているソフトの表示 7.ゲームソフトを選ぶ 8.アクティブなゲームの表示 9.ゲームをプレイする");
 
 				try {
 					str = br.readLine();
@@ -124,7 +126,7 @@ public class IamGamePlayer {
 						break;
 					//8．アクティブなゲームの表示
 					case "8":
-						hd.getActiveSoft();
+						System.out.println(hd.getActiveSoft());
 						break;
 					//9．ゲームをプレイする.
 					case "9":
@@ -134,7 +136,7 @@ public class IamGamePlayer {
 						break;
 					//１～５以外の値が入力された時
 					default:
-						System.out.println("1~4の数値を入力してください。");
+						System.out.println("1～9の数値を入力してください。");
 					}
 				} catch (Exception e) {
 					System.out.println(e); //エラーの出力
